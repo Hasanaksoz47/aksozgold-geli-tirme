@@ -56,8 +56,8 @@
         }
 
         .location svg {
-            width: 24px;
-            height: 24px;
+            width: 44px;
+            height: 34px;
             fill: #ffffff;
             cursor: pointer;
         }
@@ -80,37 +80,36 @@
 
         .product-item {
             position: relative;
-            padding: 10px;
+            padding: 0; /* Padding'i sıfırla */
             text-align: center;
-            transition: transform 0.3s ease;
-            overflow: hidden;
+            overflow: hidden; /* Taşma durumunu gizle */
         }
 
         .product-item img {
             width: 100%;
             height: auto;
-        }
-
-        .product-item:hover {
-            transform: translateY(-10px);
+            display: block; /* Resimleri blok olarak göster */
         }
 
         .product-info {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            top: 0; /* Üstten sıfır yaparak resmi tam üstüne yerleştir */
+            left: 0; /* Soldan sıfır yaparak resmi tam üstüne yerleştir */
+            right: 0; /* Sağdan sıfır yaparak resmi tam üstüne yerleştir */
+            bottom: 0; /* Alttan sıfır yaparak resmi tam üstüne yerleştir */
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 10px;
             font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            text-align: center;
+            opacity: 0; /* Başlangıçta görünmez */
+            transition: opacity 0.3s ease; /* Geçiş efekti */
+            display: flex; /* Flexbox kullanarak içerikleri ortala */
+            justify-content: center; /* Yatay ortala */
+            align-items: center; /* Dikey ortala */
         }
 
         .product-item:hover .product-info {
-            opacity: 1;
+            opacity: 1; /* Hover durumunda görünür hale getir */
         }
 
         footer {
@@ -171,35 +170,33 @@
         </div>
     </header>
 
-
-
     <main>
         <div class="container-iki">
             <h2>Beğenilen Ürünler</h2>
             <div class="product-grid-container">
                 <div class="product-item">
-                    <img src="images/453040638_18444265375065302_451567394728427842_n.jpg">
+                    <img src="images/453040638_18444265375065302_451567394728427842_n.jpg" alt="Ürün 1">
                     <div class="product-info">
                         Takı Modeli: 001<br>
                         Ayar: 14K
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg">
+                    <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg" alt="Ürün 2">
                     <div class="product-info">
                         Takı Modeli: 002<br>
                         Ayar: 18K
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="images/453045757_18444265351065302_2303292138686725679_n.jpg">
+                    <img src="images/453045757_18444265351065302_2303292138686725679_n.jpg" alt="Ürün 3">
                     <div class="product-info">
                         Takı Modeli: 003<br>
                         Ayar: 22K
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="images/453045834_18444265132065302_5683758260836863958_n.jpg">
+                    <img src="images/453045834_18444265132065302_5683758260836863958_n.jpg" alt="Ürün 4">
                     <div class="product-info">
                         Takı Modeli: 004<br>
                         Ayar: 24K
