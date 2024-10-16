@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aksozgold</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container-iki {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-container {
+            background-color: #020d2b;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 60px;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+        }
+
+        .location svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px 0;
+            flex: 1;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .product-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            position: relative;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .product-item:hover .product-info {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #020d2b;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .footer-container p,
+        .footer-container a {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu li {
+                margin-bottom: 15px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="container">
+            <div class="logo">
+                <img src="images/4e11fce2-92de-4f5f-85fb-019700f94682.jpg" alt="Logo">
+            </div>
+            <div class="location">
+                <a href="https://goo.gl/maps/nhwzjByPpgfCQne96" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.134 2 5 5.134 5 9c0 5.25 6.109 12.323 6.354 12.577a.996.996 0 0 0 1.292 0C12.891 21.323 19 14.25 19 9c0-3.866-3.134-7-7-7zm0 18C9.288 17.533 7 12.733 7 9c0-2.757 2.243-5 5-5s5 2.243 5 5c0 3.733-2.288 8.533-5 11zm0-14a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-iki">
+            <h2>Beğenilen Ürünler</h2>
+            <div class="product-grid-container">
+                <div class="product-item">
+                    <img src="images/453040638_18444265375065302_451567394728427842_n.jpg" alt="Ürün 1">
+                    <p>Ürün 1</p>
+                    <div class="product-info">
+                        Takı Modeli: 001<br>
+                        Ayar: 14K
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg" alt="Ürün 2">
+                    <p>Ürün 2</p>
+                    <div class="product-info">
+                        Takı Modeli: 002<br>
+                        Ayar: 18K
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/453045757_18444265351065302_2303292138686725679_n.jpg" alt="Ürün 3">
+                    <p>Ürün 3</p>
+                    <div class="product-info">
+                        Takı Modeli: 003<br>
+                        Ayar: 22K
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/453045834_18444265132065302_5683758260836863958_n.jpg" alt="Ürün 4">
+                    <p>Ürün 4</p>
+                    <div class="product-info">
+                        Takı Modeli: 004<br>
+                        Ayar: 24K
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>Adres: Cumhuriyet Caddesi, 12345 Midyat, Mardin</p>
+            <p>Telefon: <a href="tel:+905380558440">0538 055 8440</a></p>
+            <p>Websitesi: <a href="https://aksozkuyumculuk.com" target="_blank">https://aksozkuyumculuk.com</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
