@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksoz Gold - Ürün Tanıtım Sayfası</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            color: #020d2b;
+            border-radius: 8px;
+            border: 3px solid #020d2b;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+
+        .main-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .main-image img {
+            width: 60%;
+            height: auto;
+            border: 3px solid #020d2b;
+            border-radius: 10px;
+            transition: transform 0.4s ease-in-out;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumb-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            /* Küçük resimlerin yukarıdan biraz boşluk bırakması için */
+        }
+
+        .thumb-images img {
+            width: 90px;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid #020d2b;
+            border-radius: 6px;
+            transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .thumb-images img:hover {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            width: 35%;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-info h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #020d2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info .description {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .product-info .price {
+            font-size: 26px;
+            color: #d9534f;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .product-info .installments {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Buton stili */
+        .btn-buy {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #020d2b;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobil uyumlu yapı */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .product-gallery,
+            .product-info {
+                width: 100%;
+                padding: 0;
+            }
+
+            .product-info {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .thumb-images {
+                justify-content: center;
+                /* Küçük resimlerin ortalanmasını sağlar */
+                flex-wrap: wrap;
+                /* Taşma durumunda küçük resimleri birden fazla satıra yayar */
+                gap: 10px;
+                /* Küçük resimler arasındaki boşluk */
+            }
+
+            .thumb-images img {
+                width: 70px;
+                /* Küçük resim boyutunu ayarlayın */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Ürün fotoğrafları -->
+        <div class="product-gallery">
+            <!-- Ana resim -->
+            <div class="main-image">
+                <img id="mainImage" src="images/453041110_18444265066065302_7509678976080673495_n.jpg"
+                    alt="Ana Ürün Resmi">
+            </div>
+            <!-- Küçük resimler -->
+            <div class="thumb-images">
+                <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg" alt="Ürün Küçük Resim 1"
+                    onclick="changeImage('images/453041110_18444265066065302_7509678976080673495_n.jpg')">
+                <img src="images/453045757_18444265351065302_2303292138686725679_n.jpg" alt="Ürün Küçük Resim 2"
+                    onclick="changeImage('images/453045757_18444265351065302_2303292138686725679_n.jpg')">
+                <img src="images/453045834_18444265132065302_5683758260836863958_n.jpg" alt="Ürün Küçük Resim 3"
+                    onclick="changeImage('images/453045834_18444265132065302_5683758260836863958_n.jpg')">
+            </div>
+        </div>
+
+        <!-- Ürün bilgisi -->
+        <div class="product-info">
+            <h1>Altın Küpe Koleksiyonu</h1>
+            <p class="description">
+                Zarif bir tasarıma sahip bu altın küpe, klasik ve modern çizgileri bir arada sunar. Her ortamda dikkat
+                çeken bu şık küpeler, özel günlerde ve günlük kullanımda ideal bir tamamlayıcıdır. Sade ama göz alıcı
+                bir
+                zarafet sunar.
+            </p>
+            <p class="price">₺2,500</p>
+            <p class="installments">Veya 3 x ₺833 faizsiz taksit imkanı</p>
+            <a href="#" class="btn-buy">Satın Al</a>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageUrl) {
+            document.getElementById("mainImage").src = imageUrl;
+        }
+    </script>
+</body>
+
+</html>{\rtf1}
