@@ -20,13 +20,13 @@
         .container {
             display: flex;
             justify-content: space-between;
+            height: 100vh;
             padding: 20px 0px;
             max-width: 1100px;
             margin: 0 auto;
             background-color: #ffffff;
             color: #020d2b;
             border-radius: 8px;
-            border: 3px solid #020d2b;
             transition: border-color 0.3s ease-in-out;
         }
 
@@ -38,13 +38,13 @@
 
         .main-image {
             width: 100%;
+            height: 450px;
             margin-bottom: 20px;
         }
 
         .main-image img {
-            width: 60%;
+            width: 55%;
             height: auto;
-            border: 3px solid #020d2b;
             border-radius: 10px;
             transition: transform 0.4s ease-in-out;
             display: block;
@@ -56,14 +56,12 @@
             justify-content: center;
             gap: 15px;
             margin-top: 10px;
-            /* Küçük resimlerin yukarıdan biraz boşluk bırakması için */
         }
 
         .thumb-images img {
             width: 90px;
             height: auto;
             cursor: pointer;
-            border: 2px solid #020d2b;
             border-radius: 6px;
             transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -79,34 +77,53 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        /* Ürün bilgi kısmı animasyonu */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .product-info h1 {
-            font-size: 28px;
+            font-size: 36px;
             margin-bottom: 20px;
             color: #020d2b;
             text-transform: uppercase;
             letter-spacing: 1px;
+            background-image: linear-gradient(45deg, #d9534f, #020d2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorShift 3s infinite alternate;
+        }
+
+        /* Başlık için renk geçiş animasyonu */
+        @keyframes colorShift {
+            0% {
+                background-image: linear-gradient(45deg, #d9534f, #020d2b);
+            }
+
+            100% {
+                background-image: linear-gradient(45deg, #020d2b, #d9534f);
+            }
         }
 
         .product-info .description {
-            font-size: 16px;
+            font-size: 18px;
             color: #333;
             line-height: 1.6;
             margin-bottom: 20px;
+            transition: color 0.4s ease;
         }
 
-        .product-info .price {
-            font-size: 26px;
+        .product-info .description:hover {
             color: #d9534f;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .product-info .installments {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
         }
 
         /* Buton stili */
@@ -123,6 +140,7 @@
         }
 
         .btn-buy:hover {
+            background-color: #d9534f;
             transform: scale(1.05);
         }
 
@@ -147,16 +165,12 @@
 
             .thumb-images {
                 justify-content: center;
-                /* Küçük resimlerin ortalanmasını sağlar */
                 flex-wrap: wrap;
-                /* Taşma durumunda küçük resimleri birden fazla satıra yayar */
                 gap: 10px;
-                /* Küçük resimler arasındaki boşluk */
             }
 
             .thumb-images img {
                 width: 70px;
-                /* Küçük resim boyutunu ayarlayın */
             }
         }
     </style>
@@ -191,9 +205,6 @@
                 bir
                 zarafet sunar.
             </p>
-            <p class="price">₺2,500</p>
-            <p class="installments">Veya 3 x ₺833 faizsiz taksit imkanı</p>
-            <a href="#" class="btn-buy">Satın Al</a>
         </div>
     </div>
 
@@ -204,4 +215,4 @@
     </script>
 </body>
 
-</html>{\rtf1}
+</html>
