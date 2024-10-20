@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aksozgold</title>
+    <title>Aksoz Gold</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         * {
@@ -14,12 +15,13 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
             color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .container {
@@ -28,27 +30,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px;
         }
 
         .container-iki {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
 
         .header-container {
-            background-color: #020d2b;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #0a2342;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo img {
-            width: 60px;
-            box-shadow: 0px 0px 1px 0px wheat;
-            border-radius: 50%
+            width: 90px;
         }
 
         .location {
@@ -57,97 +57,119 @@
         }
 
         .location svg {
-            width: 44px;
-            height: 34px;
-            fill: #ffffff;
+            width: 50px;
+            height: 40px;
+            fill: #fff;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .location svg:hover {
+            transform: scale(1.1);
         }
 
         main {
-            padding: 20px 0;
+            padding: 40px 0;
             flex: 1;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
         }
 
         h2 {
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            color: #0a2342;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Başlık animasyonu */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .product-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            padding: 0 20px;
         }
 
         .product-item {
             position: relative;
-            padding: 0;
-            /* Padding'i sıfırla */
             text-align: center;
+            border-radius: 12px;
             overflow: hidden;
-            /* Taşma durumunu gizle */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .product-item img {
             width: 100%;
             height: auto;
             display: block;
-            /* Resimleri blok olarak göster */
         }
 
         .product-info {
             position: absolute;
             top: 0;
-            /* Üstten sıfır yaparak resmi tam üstüne yerleştir */
             left: 0;
-            /* Soldan sıfır yaparak resmi tam üstüne yerleştir */
             right: 0;
-            /* Sağdan sıfır yaparak resmi tam üstüne yerleştir */
             bottom: 0;
-            /* Alttan sıfır yaparak resmi tam üstüne yerleştir */
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding: 10px;
-            font-size: 14px;
+            padding: 20px;
+            font-size: 16px;
             opacity: 0;
-            /* Başlangıçta görünmez */
             transition: opacity 0.3s ease;
-            /* Geçiş efekti */
             display: flex;
-            /* Flexbox kullanarak içerikleri ortala */
             justify-content: center;
-            /* Yatay ortala */
             align-items: center;
-            /* Dikey ortala */
+            border-radius: 12px;
         }
 
         .product-item:hover .product-info {
             opacity: 1;
-            /* Hover durumunda görünür hale getir */
         }
 
         footer {
-            background-color: #020d2b;
+            background-color: #0a2342;
             text-align: center;
-            padding: 20px 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-            width: 100%;
-        }
-
-        .footer-container p,
-        .footer-container a {
+            padding: 15px 0;
             color: white;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        @media (max-width: 1250px) {
-            .container{
-                padding: 10px;
-            }
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
         }
 
+        footer p,
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f9a602;
+        }
+
+        /* Medya sorguları */
         @media (max-width: 768px) {
             .menu {
                 display: none;
@@ -169,6 +191,29 @@
                 display: block;
             }
         }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #f0f0f0;
+            }
+
+            main {
+                background-color: #444;
+            }
+
+            .product-item {
+                background-color: #555;
+            }
+
+            .footer-container {
+                background-color: #111;
+            }
+
+            h2 {
+                color: #f9a602;
+            }
+        }
     </style>
 </head>
 
@@ -176,7 +221,7 @@
     <header class="header-container">
         <div class="container">
             <div class="logo">
-                <img src="images/4e11fce2-92de-4f5f-85fb-019700f94682.jpg" alt="Logo">
+                <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.png" alt="Logo">
             </div>
             <div class="location">
                 <a href="https://www.google.com/maps?q=37.42500887512079,41.33975835047892" target="_blank">
@@ -221,60 +266,13 @@
                         Ayar: 24K
                     </div>
                 </div>
-                <div class="product-item">
-                    <img src="images/453040638_18444265375065302_451567394728427842_n.jpg" alt="Ürün 1">
-                    <div class="product-info">
-                        Takı Modeli: 001<br>
-                        Ayar: 14K
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg" alt="Ürün 2">
-                    <div class="product-info">
-                        Takı Modeli: 002<br>
-                        Ayar: 18K
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/453045757_18444265351065302_2303292138686725679_n.jpg" alt="Ürün 3">
-                    <div class="product-info">
-                        Takı Modeli: 003<br>
-                        Ayar: 22K
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/453045834_18444265132065302_5683758260836863958_n.jpg" alt="Ürün 4">
-                    <div class="product-info">
-                        Takı Modeli: 004<br>
-                        Ayar: 24K
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/453040638_18444265375065302_451567394728427842_n.jpg" alt="Ürün 1">
-                    <div class="product-info">
-                        Takı Modeli: 001<br>
-                        Ayar: 14K
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/453041110_18444265066065302_7509678976080673495_n.jpg" alt="Ürün 2">
-                    <div class="product-info">
-                        Takı Modeli: 002<br>
-                        Ayar: 18K
-                    </div>
-                </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-container">
-            <p>Adres: Yeni Mahalle Seyfettin Güneştan Cad. No: 2E, 47500 Midyat, Mardin</p>
-            <p>Telefon: <a href="tel:+905380558440">0538 055 8440</a></p>
-            <p>Websitesi: <a href="https://aksozkuyumculuk.com" target="_blank">https://aksozkuyumculuk.com</a></p>
-        </div>
+        <p>Adres: Yeni Mahalle Seyfettin Güneştan Cad. No: 2E, 47500 Midyat/Mardin - Tel: 0538 055 8440</p>
     </footer>
-
 </body>
 
 </html>
